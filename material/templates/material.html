@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.demotext {
+   color: #f0506e;
+   text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1);
+    font-size: 3rem;
+}
+</style>
+<!-- Important Links-->
+<div class="container ">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:courses' %}">كورسات للمنهج</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:resource' %}">مصادر كتب للمنهج</a>
+        </li>
+        <li class="nav-item" style="font-size: medium;">
+            <a class="nav-link" ><h4><i class=" fas fa-arrow-circle-left fa-1x uk-margin-small-right"></i>روابط تهمك</h4></a> 
+        </li>
+    </ul>
+</div>
+
+<!-- first Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الاولى</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<table class="uk-table uk-table-striped">
+
+    <thead>
+        <tr >
+            <th>Download Link</th>
+            <th>Attemp Number</th>
+            <th>Subject Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object1 %}
+        <tr>
+            <td><a href="{{obj.down_link}}" ><i class="fas fa-download fa-2x"></i></a></td>
+            <td><h4>{{obj.attempt}}</h4></td>
+            <td><h4>{{obj.subject_name}}</h4></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+
+<!-- second Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الثانية</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<table class="uk-table uk-table-striped">
+
+    <thead>
+        <tr >
+            <th>Download Link</th>
+            <th>Attemp Number</th>
+            <th>Subject Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object2 %}
+        <tr>
+            <td><a href="{{obj.down_link}}" ><i class="fas fa-download fa-2x"></i></a></td>
+            <td><h4>{{obj.attempt}}</h4></td>
+            <td><h4>{{obj.subject_name}}</h4></td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    
+<!-- third Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الثالثة</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<table class="uk-table uk-table-striped">
+
+    <thead>
+        <tr >
+            <th>Download Link</th>
+            <th>Attemp Number</th>
+            <th>Subject Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object3 %}
+        <tr>
+            <td><a href="{{obj.down_link}}" ><i class="fas fa-download fa-2x"></i></a></td>
+            <td><h4>{{obj.attempt}}</h4></td>
+            <td><h4>{{obj.subject_name}}</h4></td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    
+
+<!-- fourth Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الرابعة</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<table class="uk-table uk-table-striped">
+
+    <thead>
+        <tr >
+            <th>Download Link</th>
+            <th>Attemp Number</th>
+            <th>Subject Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object4 %}
+        <tr>
+            <td><a href="{{obj.down_link}}" ><i class="fas fa-download fa-2x"></i></a></td>
+            <td><h4>{{obj.attempt}}</h4></td>
+            <td><h4>{{obj.subject_name}}</h4></td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    
+<!-- Important Links-->
+<div class="container ">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:courses' %}">كورسات للمنهج</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:resource' %}">مصادر كتب للمنهج</a>
+        </li>
+        <li class="nav-item" style="font-size: medium;">
+            <a class="nav-link" ><h4><i class=" fas fa-arrow-circle-left fa-1x uk-margin-small-right"></i>روابط تهمك</h4></a> 
+        </li>
+    </ul>
+</div>
+
+
+{% endblock content %}

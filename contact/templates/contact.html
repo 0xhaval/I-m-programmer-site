@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+th{
+    float: left;
+}
+body{
+    direction: rtl;
+}
+.uk-button:not(:disabled){
+    margin-top: 10px;
+}
+.success {
+    background-color: rgba(0, 128, 0, 0.15);
+    padding: 10px;
+    text-align: center;
+    color: green;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+</style>
+  <div class="container">
+    <div class="row uk-text-right">
+        <div class="col-lg-6 col-md-12 col-sm-12 uk-text-center">
+                <h2 class=" uk-margin-large-top ">راسلنا في أي وقت </h2>
+            <img src="{% static 'img/contact.jpg'%}" alt="">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 uk-margin-large-top">
+                
+    {% if submitted %}
+    <p class="success">
+       Your message was submitted successfully. Thank you.
+    </p>
+
+    {% else %}
+    <form action="" method="post" novalidate>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <th><label for="id_yourname">ألاسم الكامل :</label></th>
+                    <td><input class="form-control uk-text-right" type="text" name="yourname" maxlength="100" required="" id="id_yourname" placeholder="علي محمد"></td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_email">عنوان ألبريد الالكتروني :</label></th>
+                    <td><input placeholder="name@example.com" class="form-control uk-text-right" type="email" name="email" id="id_email"></td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_subject">اسم الموضوع :</label></th>
+                    <td><input placeholder="مشروع تخرج" class="form-control uk-text-right" type="text" name="subject" maxlength="100" required="" id="id_subject"></td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_message">نص الرسالة :</label></th>
+                    <td><textarea class="form-control uk-text-right" name="message" cols="40" rows="10" required="" id="id_message"></textarea>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                   تتضمن رساله الطلاب احيانا مشاكل في مشاريع برمجيه او حل مشكله معينه لا تتردد فقط اشرح لنا المشكله ونحن نقوم بمساعدتك
+                    </small>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="إرسال" class="uk-button uk-button-secondary  uk-float-left uk-margin-large "></td>
+                </tr>
+            </table>
+        </div>
+
+    {% csrf_token %}
+    </form>
+    {% endif %}
+    </div>
+    </div>
+  </div>
+
+ {% endblock content %}
+<!--
+ <h2 class=" uk-margin-large-top uk-margin-large-bottom">صفحاتنا الرسمية على التواصل الاجتماعي </h2>
+                <a href="#"><i class="fab fa-facebook-f fa-6x"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane fa-6x uk-margin-left"></i></a>
+                <a href="#"><i class="fab fa-youtube fa-6x uk-margin-left"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-6x uk-margin-left"></i></a>
+
+                -->

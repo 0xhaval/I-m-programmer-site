@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.demotext {
+   color: #f0506e;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1);
+    font-size: 3rem;
+}
+</style>
+<!-- Important Links-->
+<div class="container ">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:resource' %}">مصادر كتب للمنهج</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:material' %}">ملازم المنهج</a>
+        </li>
+        <li class="nav-item" style="font-size: medium;">
+            <a class="nav-link" ><h4><i class=" fas fa-arrow-circle-left fa-1x uk-margin-small-right"></i>روابط تهمك</h4></a> 
+        </li>
+    </ul>
+</div>
+
+<!-- first Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الاولى</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>كورسات المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<div class="uk-position-relative uk-visible-toggle uk-margin-medium-bottom" tabindex="-1" uk-slideshow="animation: push">
+
+    <ul class="uk-slideshow-items uk-text-right">
+        {% for obj in object1 %}
+        <li>
+          <img src="{{obj.img_course.url}}" alt="" uk-cover>
+            <div class="uk-overlay uk-overlay-primary uk-position-right uk-text-center uk-transition-slide-right uk-width-medium">
+                <h3 class=" uk-margin-medium-bottom">{{obj.subject_name}}</h3>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_author}}</h4>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_name}}</h4>
+                
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="uk-light">
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    </div>
+
+</div>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+
+<!-- second Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الثانية</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>كورسات المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<div class="uk-position-relative uk-visible-toggle uk-margin-medium-bottom" tabindex="-1" uk-slideshow="animation: push">
+
+    <ul class="uk-slideshow-items uk-text-right">
+        {% for obj in object2 %}
+        <li>
+          <img src="{{obj.img_course.url}}" alt="" uk-cover>
+            <div class="uk-overlay uk-overlay-primary uk-position-right uk-text-center uk-transition-slide-right uk-width-medium">
+                <h3 class=" uk-margin-medium-bottom">{{obj.subject_name}}</h3>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_author}}</h4>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_name}}</h4>
+                
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="uk-light">
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    </div>
+    
+</div>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    
+<!-- third Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الثالثة</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>كورسات المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<div class="uk-position-relative uk-visible-toggle uk-margin-medium-bottom" tabindex="-1" uk-slideshow="animation: push">
+
+    <ul class="uk-slideshow-items uk-text-right">
+        {% for obj in object3 %}
+        <li>
+          <img src="{{obj.img_course.url}}" alt="" uk-cover>
+            <div class="uk-overlay uk-overlay-primary uk-position-right uk-text-center uk-transition-slide-right uk-width-medium">
+                <h3 class=" uk-margin-medium-bottom">{{obj.subject_name}}</h3>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_author}}</h4>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_name}}</h4>
+                
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="uk-light">
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    </div>
+    
+</div>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    
+
+<!-- fourth Stage title-->
+<div class="container uk-text-center">
+    <h2 class="uk-margin-small-top demotext"> المرحلة الرابعة</h2>
+    <h3 class="uk-heading-line uk-text-center"><span>كورسات المناهج الدراسية</span></h3>
+</div>
+<div class="container">
+<div class="uk-position-relative uk-visible-toggle uk-margin-medium-bottom" tabindex="-1" uk-slideshow="animation: push">
+
+    <ul class="uk-slideshow-items uk-text-right">
+        {% for obj in object4 %}
+        <li>
+          <img src="{{obj.img_course.url}}" alt="" uk-cover>
+            <div class="uk-overlay uk-overlay-primary uk-position-right uk-text-center uk-transition-slide-right uk-width-medium">
+                <h3 class=" uk-margin-medium-bottom">{{obj.subject_name}}</h3>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_author}}</h4>
+                <h4 class="uk-margin-medium-bottom">{{obj.course_name}}</h4>
+                
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="uk-light">
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    </div>
+    
+</div>
+</div>
+
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    
+<!-- Important Links-->
+<div class="container ">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:resource' %}">مصادر كتب للمنهج</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'material:material' %}">ملازم المنهج</a>
+        </li>
+        
+        <li class="nav-item" style="font-size: medium;">
+            <a class="nav-link" ><h4><i class=" fas fa-arrow-circle-left fa-1x uk-margin-small-right"></i>روابط تهمك</h4></a> 
+        </li>
+    </ul>
+</div>
+
+
+{% endblock content %}

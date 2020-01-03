@@ -1,0 +1,391 @@
+{% load static %}
+<html lang="en">
+<head>
+
+    <!-- Css Link-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css ' %}">    <!-- Bootstarp lib-->
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css ' %}">        <!-- UiKit lib-->  
+    <link rel="stylesheet" href="{% static 'css/hover.css ' %}">            <!-- Hover lib-->
+    <link rel="stylesheet" href="{% static 'css/hover-min.css' %}">        <!-- Hover lib-->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">             <!-- Main file-->
+
+    <!--fontaowsome-->
+    <link rel="stylesheet" href="{% static 'css/all.css'%}">
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>I Think</title>
+
+    <style>
+        .head{
+        /*border white with light shadow*/
+        text-shadow: 
+        1px  1px     #fff, 
+        -1px  1px     #fff, 
+        1px -1px     #fff, 
+        -1px -1px     #fff,
+        1px  1px 5px #555;
+        margin: 0;
+        line-height: 1;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 5em;
+        color: #423eac;
+    }
+
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color: rgb(66, 62, 172);
+    }
+
+    .hvr-underline-from-center:before{
+        background: #ff6776;
+    }
+    .uk-modal-full .uk-modal-dialog{
+        background-color: #162047;
+    }
+    
+    .navbar-expand-lg .navbar-nav{
+        padding: 0;
+    }
+
+    .uk-width-1-2\@m{
+    float: left;
+    width: 14%;
+    margin-left:3rem;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .uk-width-1-2\@m
+        {
+            width: 50%;
+        }
+        .uk-position-fixed
+        {
+            position: relative!important;
+        }
+}
+    </style>
+</head>
+
+<!-- Body -->
+<body>
+    
+    <!-- Site Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light my_nav container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  nav_ul" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item ">
+              <a class="nav-link hvr-underline-from-center" href="{% url 'homePage' %}">ألرئيسية </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-center" href="{% url 'material:material'%}">المناهج ألدراسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-center" href="{% url 'testExam' %}">الأختبارات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-center" href="{% url 'aboutPage' %}">حول الموقع</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-center" href="{% url 'contact:contact'%}">تواصل معنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-sweep-to-top" href="{% url 'blog:post_list'%}"><button class="uk-button uk-button-danger">المدونة</button></a>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+        </div>
+    </nav>
+
+    <!-- Search Icon -->
+    <div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+        <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+            <button class="uk-modal-close-full" type="button" uk-close></button>
+            <form class="uk-search uk-search-large">
+                <input class="uk-search-input uk-text-center" type="search" placeholder="أبحث هنا..." autofocus>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    {% block content %}
+
+    <!-- Improtant sites in card-->
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-position-fixed	">
+        <div class="uk-card-badge uk-label">مواقع تهمك</div>
+        <ul class=" uk-margin-medium-top">
+            <li><a href="https://scholar.google.com/" target="blank_">Goole Scholer</a></li>
+            <li><a href="http://www.academicinfo.net/" target="blank_">Academic Info</a></li>
+            <li><a href="http://education.iseek.com/iseek/home.page" target="blank_">iSeek Education</a></li>
+            <li><a href="https://www.refseek.com/" target="blank_">Refseek</a></li>
+        </ul>
+    </div>
+    <!-- Description of site-->
+    <div class=" container">
+        <div class="uk-text-right">
+            <div class="detalis">
+                <h1 class="border-white det-wrbsite hvr-float-shadow head ">انا مبرمج</h1>
+                <h2>مرحبا بكم في الموقع التعليمي <br>  لعلوم الحاسبات وتكنولوجيا المعلومات </h2>
+            </div>
+            <div>
+                <img src="{% static 'img/home.jpg' %}" alt="">                
+            </div>
+        </div>
+    </div>
+
+    
+    <!--Line under Description
+    <div class="container">
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+
+-->
+    <!-- Why Use it-->
+<div class="container">
+        <h2 class="uk-text-center uk-margin-top" style="font-size: 3.2rem;">لماذا استخدم موقع <span>أنا مبرمج ؟</span></h2>
+        <div class="uk-child-width-1-2@m uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <a href="#"><i class="fab fa-cloudscale fa-10x uk-margin-small-top icons"></i></a>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">إمتلك المزيد من الوقت</h3>
+                        <p>لن تجبر ان تنتظر الى ان يعطونك المواد او المناهج لهذا ستمتلك المزيد من الوقت الاضافي الانتظار في طابور الاستنساخ</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-bottom">
+                        <a href="#"><i class="fas fa-map-marker-alt fa-10x uk-margin-small-top icons"></i></a>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">أدرس اينما تشاء</h3>
+                        <p>مجرد ان يتوفر لديك الانترنيت تستطيع الدخول على الموقع وتصفح المواد الدراسية  دون الحالجه الى اصطحابك للكتب والملازم</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <a href="#"><i class="far fa-file-pdf fa-10x uk-margin-small-top icons"></i></a>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title"><span>PDF</span> جميع مواد وبصيغه  </h3>
+                        <p>  ستجد ان جميع موادك مرفوعه بأفضل الصيغ مما يسهل عليك تنزيلها وفتحها في جميع انواع الاجهزه </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-bottom">
+                            <a href="#"><i class="fas fa-book fa-10x uk-margin-small-top icons"></i></a>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">مخزن للمصادر الخارجية</h3>
+                        <p>وضعنا كم جيد من المصادر الخارجيه للجوء اليها عند اي مشاكل او اطلاع اكثر عن المواد الجامعيه لزياده الخبره</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Motivation-->
+    <div class="card-holder uk-margin-large-bottom">
+        <div class="card1 bg-aurora">
+            <h2 style="font-size: 4.2rem;" class="head">البرمجه أداة <span><br>المستقبل</span></h2>
+        </div>
+    </div>
+
+    <!-- Slider Student-->
+    <div class="container">
+        <h2 class="uk-text-center uk-margin-xlarge-top" style="font-size: 3.2rem;">أراء الطلاب حول   <span>الموقع </span></h2>
+        <hr class="uk-divider-icon" style="color: black;">
+        <div uk-slider="center: true" class="uk-text-right">
+
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+                <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+                    <li>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="{% static 'img/boy1.jpg'%}" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">محمد علي</h3>
+                                <p>موقع ممتاز وينصح ان يجرب من قبل الطلاب لما يحتويه من كورسات ومصادر تفيد المبرمج المبتدء وحتى يرشدك لاحتراف البرمجه</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="{% static 'img/boy2.jpg'%}" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">محمد علي</h3>
+                                <p>موقع ممتاز وينصح ان يجرب من قبل الطلاب لما يحتويه من كورسات ومصادر تفيد المبرمج المبتدء وحتى يرشدك لاحتراف البرمجه</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="{% static 'img/boy3.jpg'%}" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">محمد علي</h3>
+                                <p>موقع ممتاز وينصح ان يجرب من قبل الطلاب لما يحتويه من كورسات ومصادر تفيد المبرمج المبتدء وحتى يرشدك لاحتراف البرمجه</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="{% static 'img/boy4.jpg'%}" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">محمد علي</h3>
+                                <p>موقع ممتاز وينصح ان يجرب من قبل الطلاب لما يحتويه من كورسات ومصادر تفيد المبرمج المبتدء وحتى يرشدك لاحتراف البرمجه</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="{% static 'img/boy5.jpg'%}" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">محمد علي</h3>
+                                <p>موقع ممتاز وينصح ان يجرب من قبل الطلاب لما يحتويه من كورسات ومصادر تفيد المبرمج المبتدء وحتى يرشدك لاحتراف البرمجه</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+            </div>
+
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+        </div>
+    </div>
+
+
+    <!--Cards-->
+    <div class="container uk-text-right" id="stages">
+        <h2 class="uk-text-center uk-margin-xlarge-top" style="font-size: 3.2rem;">افضل كورسات في مجال  <span>البرمجة </span></h2>
+        <div class="uk-child-width-1-2@s uk-grid-match " uk-grid>
+            <!--first stage-->
+            <a href="">
+                <div class="imghvr-fadeuk-card uk-card-hover uk-card-body">
+                    <img src="{% static 'img/prog.jpeg'%}" alt="">
+                    <h3 class="uk-card-title">اساسيات البرمجه</h3>
+                    <p><span>C++</span> ستتعلم في الكورس اساسيات البرمجة بالكامل بلغه</p>
+                </div>
+            </a>
+
+
+        <!--Second stage-->
+            <div>
+            <a href="">
+                <div class="imghvr-fadeuk-card uk-card-hover uk-card-body">
+                    <img src="{% static 'img/network.jpg'%}" alt="">
+                    <h3 class="uk-card-title">كورس شبكات</h3>
+                    <p>هذا الكورس عبارة عن تأسيس نفسك في الشبكات ومصطلحاتها وفهم الية ربط الاجهزة مع بعض</p>
+                </div>
+            </a>
+            </div>
+
+            <!--third stage-->
+            <div>
+            <a href="">
+                <div class="imghvr-fadeuk-card uk-card-hover uk-card-body">
+                    <img src="{% static 'img/oop.jpg'%}" alt="">
+                    <h3 class="uk-card-title">البرمجة الكائنات</h3>
+                    <p>هذا الكورس المتقدم في البرمجة حيث تتعلم به كيفيه برمجة الكائنات في حياتنا الواقعية وتحويلها الى اكواد برمجية</p>
+                </div>
+            </a>
+            </div>
+        
+
+            <div>
+            <a href="">
+                <div class="imghvr-fadeuk-card uk-card-hover uk-card-body">
+                    <img src="{% static 'img/db.png'%}" alt="">
+                    <h3 class="uk-card-title">قواعد بيانات</h3>
+                    <p>لا يخلو شركه او برنامج من قواعد بيانات لها وهنا ستتعلم مفاهيم قواعد بيانات كيفية ربط الجداول واستدعائها</p>
+                </div>
+            </a>
+            </div>
+
+            
+
+            <!--fourth stage-->
+            
+        </div>
+    </div>
+    {% endblock content %}
+    
+    
+    <!--Footer-->
+    <div class="foot uk-margin-medium-top">
+        <footer class="container">
+            <div class="row uk-text-center">
+                <div class="col-lg-4 col-md-12 col-sm-12 uk-margin-small-top">
+                    <a href=""><i class=" fas fa-university fa-10x university"></i></a>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <h3 class="uk-margin-medium-top footer-nav">روابط تهمك</h3>
+                    <ul class="uk-list uk-list-divider">
+                        <a class="nav-link hvr-underline-from-center" href="{% url 'material:material'%}"><li>المناهج الدراسية</li></a>
+                        <a class="nav-link hvr-underline-from-center" href="{% url 'testExam' %}"><li>الأختبارات</li></a>
+                        <a class="nav-link hvr-underline-from-center" href="{% url 'aboutPage' %}"><li>حول الموقع</li></a>
+                        <a class="nav-link hvr-underline-from-center" href="{% url 'contact:contact'%}"><li>تواصل معنا</li></a>
+                        <a class="nav-link hvr-sweep-to-top" href="{% url 'blog:post_list'%}"><li>المدونة</li></a>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <h3 class="uk-margin-medium-top footer-nav">تواصل معنا</h3>
+                    <div class="">
+                        <a href=""><i class="fab fa-facebook fa-3x social-media uk-margin-right"></i></a>
+                        <a href=""><i class="fab fa-instagram fa-3x social-media uk-margin-right"></i></a>
+                        <a href=""><i class="fab fa-youtube fa-3x social-media uk-margin-right"></i></a>
+                        <a href=""><i class="fab fa-telegram fa-3x social-media uk-margin-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container uk-text-center copy-right">
+                <h4>All Right Reseved &copy; 2019 to Black Team &hearts; Support By Dr. <a href="https://scholar.google.com/citations?user=9xvYuRQAAAAJ&hl=en" target=" blank_" class=" uk-tile-secondary">Tareq Abed Mohammed</a> &olcir;</h4>
+            </div>
+        </footer>
+    </div>
+    
+
+    <!-- Js Link-->
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/uikit.min.js'%}"></script>
+    <script src="{% static 'js/uikit-icons.min.js'%}"></script>
+    <script src="{% static 'js/all.js'%}"></script>
+</body>
+</html>

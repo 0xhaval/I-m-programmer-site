@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!--Two Course title-->
+    <div class="container uk-text-center">
+        <h1>اختر الفصل الدراسي</h1>
+        <hr class="uk-divider-icon" style="color: black;">
+    </div>
+    <!--Cards-->
+    <div class="container uk-text-right" id="stages">
+        <div class="uk-child-width-1-2@s uk-grid-match " uk-grid>
+            <div>
+                <a href="materialName.html">
+                    <div class="imghvr-fadeuk-card uk-card-hover uk-card-body">
+                        <img src="{% static 'img/login.png'%}" alt="">
+                        <h3 class="uk-card-title">مواد الكورس الثاني</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a href="materialName.html">
+                    <div class="imghvr-fadeuk-card uk-card-hover uk-card-body">
+                        <img src="{% static 'img/login.png'%}" alt="">
+                        <h3 class="uk-card-title">مواد الكورس الاول</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

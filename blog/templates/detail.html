@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+<article class="uk-article uk-text-right container">
+
+    <h1 class="uk-article-title ">{{ post.title }}</h1>
+
+    <p class="uk-article-meta">Written by <a href="#"> {{ post.author }}</a> {{ post.publish }} Posted in <a href="#">Blog</a></p>
+
+    <div class="">
+        <img src="{{post.img.url}}" alt="" style="height: 300px; width: 1000px;">
+    </div>
+
+    <p class="uk-text-lead">{{ post.body|linebreaks }}</p>
+
+</article>
+{% endblock %}

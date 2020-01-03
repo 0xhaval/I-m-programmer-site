@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="uk-text-center uk-margin-small-top uk-margin-medium-bottom" style="font-size: 3.2rem;"> مرحبا بك في مدونة   <span>الموقع </span></h2>
+    <hr class="uk-divider-icon uk-margin-medium-bottom" style="color: black;">
+</div>
+{% for post in posts %}
+
+<div class="card container uk-text-right uk-margin-large-bottom" style="padding-left: 0; padding-right: 0;">
+    <img src="{{ post.img.url }}" class="card-img-top" alt="..." style="height: 300px; width: 1150px;">
+    <div class="card-body">
+      <h2 class="card-title">
+        <a href="{{ post.get_absolute_url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+      <p class="card-text uk-text-right">{{ post.body|truncatewords:40|linebreaks }}</p>
+      <p class="card-text uk-text-left"><small class="text-muted">Published {{ post.publish }} by {{ post.author }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="container uk-text-right" style="padding-bottom: 20px;">
+      {% include "pagination.html" with page=posts %}
+    </div>
+    
+    {% endblock %}
+
+ 
+    
